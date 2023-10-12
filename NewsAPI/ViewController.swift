@@ -68,7 +68,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func NEWS_API () {
         
-        let NEWS_API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=45325568f0c64e11a47838b9697fdb17"
+        let NEWS_API_URL = "https://newsapi.org/v2/everything?q=apple&from=2023-10-11&to=2023-10-11&sortBy=popularity&apiKey=45325568f0c64e11a47838b9697fdb17"
 
         
         AF.request(NEWS_API_URL).responseJSON{(response) in
