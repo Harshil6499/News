@@ -12,6 +12,8 @@ import AlamofireImage
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    
+    var webURL: URL?
     @IBOutlet weak var MyNewsTableView: UITableView!
     
     var my_arr_news = [String]()
@@ -20,6 +22,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var my_arr_title = [String]()
     var my_arr_content = [String]()
     var my_arr_description = [String]()
+    var my_arr_url = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let url = URL(string: my_arr_image[indexPath.row])
         print("............")
+        
         cell.MyNewsImageView.af.setImage(withURL: url!)
         return cell
     }
@@ -55,14 +60,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let main = storyboard?.instantiateViewController(identifier: "NewsDetailViewController") as! NewsDetailViewController
         main.newsheadline = my_arr_title[indexPath.row]
-        main.newsdescription = my_arr_description[indexPath.row]
-        main.newscontent = my_arr_content[indexPath.row]
+        main.newscontent = my_arr_description[indexPath.row]
+        main.newsdescription = my_arr_content[indexPath.row]
         main.newspasslbl = my_arr_image[indexPath.row]
-        self.present(main,animated: true)
-      
+        main.newsurl = my_arr_url[indexPath.row]
+        
+        //self.present(main,animated: true)
+        self.navigationController?.pushViewController(main, animated: true)
         
     }
-    
     
      //API CALLING__________________
     
@@ -83,6 +89,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 self.my_arr_date.removeAll()
                 self.my_arr_image.removeAll()
                 self.my_arr_content.removeAll()
+                self.my_arr_url.removeAll()
                 
                 
                 for i in my_data.arrayValue{
@@ -105,12 +112,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                     let content = i["content"].stringValue
                     self.my_arr_content.append(content)
                     
+                    let url = i["url"].stringValue
+                    self.my_arr_url.append(url)
+                    
                     print(content)
                     print(title)
                     print(urlToImage)
                     print(publishedAt)
                     print(title)
                     print(news)
+                    print(url)
                     
                 }
                 self.MyNewsTableView.reloadData()
