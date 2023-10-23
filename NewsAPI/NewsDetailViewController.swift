@@ -15,8 +15,6 @@ import WebKit
 class NewsDetailViewController: UIViewController,WKNavigationDelegate {
 
     
-    var webURL: URL? // This property will hold the URL from the first view controller.
-
     @IBOutlet weak var MyNewsHeadLinelbl: UILabel!
     @IBOutlet weak var MyNewsImagePasslbl: UIImageView!
     @IBOutlet weak var MyNewsDescriptionlbl: UILabel!
@@ -32,7 +30,6 @@ class NewsDetailViewController: UIViewController,WKNavigationDelegate {
     
     
     @IBAction func ok(_ sender: Any) {
-        
         if let web = MyNewsWebUrlbl.text, let url = URL(string: web) {
                 let VC = storyboard?.instantiateViewController(withIdentifier: "WebView") as! WebViewController
                 VC.webURL = url
@@ -46,8 +43,8 @@ class NewsDetailViewController: UIViewController,WKNavigationDelegate {
         MyNewsDescriptionlbl.text = newsdescription
         MyNewsContentlbl.text = newscontent
         MyNewsWebUrlbl.text = newsurl
-        let urll = URL(string: newspasslbl)
-        self.MyNewsImagePasslbl.af.setImage(withURL: urll!)
+        let url = URL(string: newspasslbl)
+        self.MyNewsImagePasslbl.af.setImage(withURL: url!)
 
 
     }

@@ -14,12 +14,11 @@ class WebViewController: UIViewController,WKNavigationDelegate {
     
     var webURL: URL?
 
-    
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
-        if let webURL = webURL {
-                    MyNewsDetail.load(URLRequest(url: webURL))
-                }
+        if let weburll = webURL {
+        MyNewsDetail.load(URLRequest(url: weburll))
+        }
     }
 }

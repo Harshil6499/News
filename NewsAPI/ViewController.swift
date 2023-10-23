@@ -13,7 +13,7 @@ import AlamofireImage
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     
-    var webURL: URL?
+    
     @IBOutlet weak var MyNewsTableView: UITableView!
     
     var my_arr_news = [String]()
@@ -33,7 +33,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.MyNewsTableView.delegate = self
         
         //self.MyNewsTableView.reloadData()
-        // Do any additional setup after loading the view.
+    
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return my_arr_news.count
@@ -46,7 +46,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.MyNewsContentLBL.text = my_arr_title[indexPath.row]
         
         let url = URL(string: my_arr_image[indexPath.row])
-        print("............")
+        //print("............")
         
         cell.MyNewsImageView.af.setImage(withURL: url!)
         return cell
