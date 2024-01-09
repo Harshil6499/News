@@ -25,4 +25,4 @@ Here're some of the project's features:
 
 Here're That Link for API:
 
-<a href="https://newsapi.org">
+<a href="https://newsapi.org">Link</a>
