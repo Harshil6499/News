@@ -39,12 +39,13 @@ class NewsDetailViewController: UIViewController,WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        MyNewsImagePasslbl.layer.cornerRadius = 5
         MyNewsHeadLinelbl.text = newsheadline
         MyNewsDescriptionlbl.text = newsdescription
         MyNewsContentlbl.text = newscontent
         MyNewsWebUrlbl.text = newsurl
         let url = URL(string: newspasslbl)
-        self.MyNewsImagePasslbl.af.setImage(withURL: url!)
+      self.MyNewsImagePasslbl.af.setImage(withURL: url!)
 
 
     }

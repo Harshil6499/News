@@ -32,6 +32,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.MyNewsTableView.dataSource = self
         self.MyNewsTableView.delegate = self
         
+        
         //self.MyNewsTableView.reloadData()
     
     }
@@ -74,7 +75,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func NEWS_API () {
         
-        let NEWS_API_URL = "https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=45325568f0c64e11a47838b9697fdb17"
+        let NEWS_API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=45325568f0c64e11a47838b9697fdb17"
 
         
         AF.request(NEWS_API_URL).responseJSON{(response) in
