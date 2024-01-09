@@ -20,3 +20,9 @@ Here're some of the project's features:
 *   Read News
 *   OverView News
 
+
+<h2>👍 Free API Scouce</h2>
+
+Here're That Link for API:
+
+<a href="https://newsapi.org">
