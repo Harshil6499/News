@@ -18,4 +18,5 @@
 Here're some of the project's features:
 
 *   Read News
+*   OverView News
 
